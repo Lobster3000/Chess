@@ -69,7 +69,7 @@ namespace ConsoleApplication21
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("----------------------------------------");
+            // Console.WriteLine("----------------------------------------");
         }
     }
 }
