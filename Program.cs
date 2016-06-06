@@ -11,17 +11,6 @@ namespace ConsoleApplication21
     {
         static string[,] place = new string[8, 8];
 
-
-
-
-
-
-
-
-
-
-
-
         static void Main()
         {
             CreatePlaces();
