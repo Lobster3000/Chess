@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication21
 {
-
     class Program
     {
         static string[,] place = new string[8, 8];
@@ -54,29 +53,34 @@ namespace ConsoleApplication21
             string a = place[leter1, column1];
             //rules cheking------------------------------------------------------
             //-------------------------------------------------------------------
-         
+
             if (place[leter1, column1] == "1")
-            {   
-                if (leter1==leter2 && column1-1 == column2 && place[leter2, column2] == "0")
+            {
+                if (leter1 == leter2 && column1 - 1 == column2 && place[leter2, column2] == "0")
                 {
                     place[leter1, column1] = "0"; place[leter2, column2] = a;
                 }
-                //else if (place[leter1 + 1, column1 - 1] == place[leter2, column2]
-                //                          && place[leter1 + 1, column1 - 1] == "1"
-                //                          || place[leter1 + 1, column1 - 1] == "2"
-                //                          || place[leter1 + 1, column1 - 1] == "3"
-                //                          || place[leter1 + 1, column1 - 1] == "4"
-                //                          || place[leter1 + 1, column1 - 1] == "5"
-                //                          || place[leter1 + 1, column1 - 1] == "6")
-                //{
-                //    place[leter1, column1] = "0"; place[leter2, column2] = a;
-                //}
+                else if (leter1 + 1 == leter2 && column1 - 1 == column2
+                                          && place[leter1 + 1, column1 - 1] == "1"
+                                          || place[leter1 + 1, column1 - 1] == "2"
+                                          || place[leter1 + 1, column1 - 1] == "3"
+                                          || place[leter1 + 1, column1 - 1] == "4"
+                                          || place[leter1 + 1, column1 - 1] == "5"
+                                          || place[leter1 + 1, column1 - 1] == "6")
+                {
+                    place[leter1, column1] = "0"; place[leter2, column2] = a;
+                }
                 else
                 {
-                    Console.WriteLine("Peshka cant go like this");
+                    Console.WriteLine("Pawn cant go like this");
                     Console.ReadKey();
                 }
             }
+            if (place[leter1, column1] != "1")
+            {
+                place[leter1, column1] = "0"; place[leter2, column2] = a;
+            }
+                
 
         }
         static void CreatePlaces()
@@ -110,7 +114,7 @@ namespace ConsoleApplication21
                     Console.Write(place[j, i]);
                     Console.Write(" ");
                 }
-                Console.Write("  "+ i);
+                Console.Write("  " + i);
                 Console.WriteLine();
             }
             Console.WriteLine();
