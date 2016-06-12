@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,7 +53,10 @@ namespace ConsoleApplication21
             string a = place[leter1, column1];
             //rules cheking------------------------------------------------------
             //-------------------------------------------------------------------
-
+            if (place[leter1, column1] == "0")
+            {
+                Console.WriteLine("You took no figure");   
+            }
             if (place[leter1, column1] == "1")
             {
                 if (leter1 == leter2 && column1 - 1 == column2 && place[leter2, column2] == "0")
@@ -76,12 +79,203 @@ namespace ConsoleApplication21
                     Console.ReadKey();
                 }
             }
-            if (place[leter1, column1] != "1")
+            if (place[leter1, column1] == "2") 
             {
-                place[leter1, column1] = "0"; place[leter2, column2] = a;
+                if (column1 - 1 == column2 && leter1 == leter2                                      ||                                             
+                    column1 - 2 == column2 && leter1 == leter2 && place[column1 - 1, leter1] != "0" ||                                              
+                    column1 - 3 == column2 && leter1 == leter2 && place[column1 - 1, leter1] != "0" 
+                                                               && place[column1 - 2, leter1] != "0" ||  
+                    column1 - 4 == column2 && leter1 == leter2 && place[column1 - 1, leter1] != "0"
+                                                               && place[column1 - 2, leter1] != "0"
+                                                               && place[column1 - 3, leter1] != "0" ||
+                    column1 - 5 == column2 && leter1 == leter2 && place[column1 - 1, leter1] != "0"
+                                                               && place[column1 - 2, leter1] != "0"
+                                                               && place[column1 - 3, leter1] != "0" 
+                                                               && place[column1 - 4, leter1] != "0" ||
+                    column1 - 6 == column2 && leter1 == leter2 && place[column1 - 1, leter1] != "0"
+                                                               && place[column1 - 2, leter1] != "0"
+                                                               && place[column1 - 3, leter1] != "0" 
+                                                               && place[column1 - 4, leter1] != "0" 
+                                                               && place[column1 - 5, leter1] != "0" ||
+                    column1 - 7 == column2 && leter1 == leter2 && place[column1 - 1, leter1] != "0"
+                                                               && place[column1 - 2, leter1] != "0"
+                                                               && place[column1 - 3, leter1] != "0" 
+                                                               && place[column1 - 4, leter1] != "0" 
+                                                               && place[column1 - 5, leter1] != "0" 
+                                                               && place[column1 - 6, leter1] != "0" ||
+                    column1 + 1 == column2 && leter1 == leter2                                      ||                                             
+                    column1 + 2 == column2 && leter1 == leter2 && place[column1 + 1, leter1] != "0" ||                                              
+                    column1 + 3 == column2 && leter1 == leter2 && place[column1 + 1, leter1] != "0" 
+                                                               && place[column1 + 2, leter1] != "0" ||  
+                    column1 + 4 == column2 && leter1 == leter2 && place[column1 + 1, leter1] != "0"
+                                                               && place[column1 + 2, leter1] != "0"
+                                                               && place[column1 + 3, leter1] != "0" ||
+                    column1 + 5 == column2 && leter1 == leter2 && place[column1 + 1, leter1] != "0"
+                                                               && place[column1 + 2, leter1] != "0"
+                                                               && place[column1 + 3, leter1] != "0" 
+                                                               && place[column1 + 4, leter1] != "0" ||
+                    column1 + 6 == column2 && leter1 == leter2 && place[column1 + 1, leter1] != "0"
+                                                               && place[column1 + 2, leter1] != "0"
+                                                               && place[column1 + 3, leter1] != "0" 
+                                                               && place[column1 + 4, leter1] != "0" 
+                                                               && place[column1 + 5, leter1] != "0" ||
+                    column1 + 7 == column2 && leter1 == leter2 && place[column1 + 1, leter1] != "0"
+                                                               && place[column1 + 2, leter1] != "0"
+                                                               && place[column1 + 3, leter1] != "0" 
+                                                               && place[column1 + 4, leter1] != "0" 
+                                                               && place[column1 + 5, leter1] != "0" 
+                                                               && place[column1 + 6, leter1] != "0" ||
+                    leter1 - 1 == leter2 && column1 == column2                                      ||                                             
+                    leter1 - 2 == leter2 && column1 == column2 && place[leter1 - 1, column1] != "0" ||                                              
+                    leter1 - 3 == leter2 && column1 == column2 && place[leter1 - 1, column1] != "0" 
+                                                               && place[leter1 - 2, column1] != "0" ||  
+                    leter1 - 4 == leter2 && column1 == column2 && place[leter1 - 1, column1] != "0"
+                                                               && place[leter1 - 2, column1] != "0"
+                                                               && place[leter1 - 3, column1] != "0" ||
+                    leter1 - 5 == leter2 && column1 == column2 && place[leter1 - 1, column1] != "0"
+                                                               && place[leter1 - 2, column1] != "0"
+                                                               && place[leter1 - 3, column1] != "0" 
+                                                               && place[leter1 - 4, column1] != "0" ||
+                    leter1 - 6 == leter2 && column1 == column2 && place[leter1 - 1, column1] != "0"
+                                                               && place[leter1 - 2, column1] != "0"
+                                                               && place[leter1 - 3, column1] != "0" 
+                                                               && place[leter1 - 4, column1] != "0" 
+                                                               && place[leter1 - 5, column1] != "0" ||
+                    leter1 - 7 == leter2 && column1 == column2 && place[leter1 - 1, column1] != "0"
+                                                               && place[leter1 - 2, column1] != "0"
+                                                               && place[leter1 - 3, column1] != "0" 
+                                                               && place[leter1 - 4, column1] != "0" 
+                                                               && place[leter1 - 5, column1] != "0" 
+                                                               && place[leter1 - 6, column1] != "0" ||
+                    leter1 + 1 == leter2 && column1 == column2                                      ||                                             
+                    leter1 + 2 == leter2 && column1 == column2 && place[leter1 + 1, column1] != "0" ||                                              
+                    leter1 + 3 == leter2 && column1 == column2 && place[leter1 + 1, column1] != "0" 
+                                                               && place[leter1 + 2, column1] != "0" ||  
+                    leter1 + 4 == leter2 && column1 == column2 && place[leter1 + 1, column1] != "0"
+                                                               && place[leter1 + 2, column1] != "0"
+                                                               && place[leter1 + 3, column1] != "0" ||
+                    leter1 + 5 == leter2 && column1 == column2 && place[leter1 + 1, column1] != "0"
+                                                               && place[leter1 + 2, column1] != "0"
+                                                               && place[leter1 + 3, column1] != "0" 
+                                                               && place[leter1 + 4, column1] != "0" ||
+                    leter1 + 6 == leter2 && column1 == column2 && place[leter1 + 1, column1] != "0"
+                                                               && place[leter1 + 2, column1] != "0"
+                                                               && place[leter1 + 3, column1] != "0" 
+                                                               && place[leter1 + 4, column1] != "0" 
+                                                               && place[leter1 + 5, column1] != "0" ||
+                    leter1 + 7 == leter2 && column1 == column2 && place[leter1 + 1, column1] != "0"
+                                                               && place[leter1 + 2, column1] != "0"
+                                                               && place[leter1 + 3, column1] != "0" 
+                                                               && place[leter1 + 4, column1] != "0" 
+                                                               && place[leter1 + 5, column1] != "0" 
+                                                               && place[leter1 + 6, column1] != "0" )
+                {
+                    place[leter1, column1] = "0"; place[leter2, column2] = a;     
+                }
+                else 
+                {
+                    Console.WriteLine("Rook cant do that");
+                }
             }
-                
+            if (place[leter1, column1] == "3")
+            {
+                if (leter1 - 1 == leter2 && column1 - 2 == column2 ||
+                    leter1 + 1 == leter2 && column1 - 2 == column2 ||
+                    leter1 - 2 == leter2 && column1 - 1 == column2 ||
+                    leter1 + 2 == leter2 && column1 - 1 == column2 ||
+                    leter1 - 2 == leter2 && column1 + 1 == column2 ||
+                    leter1 + 2 == leter2 && column1 + 1 == column2 ||
+                    leter1 - 1 == leter2 && column1 + 2 == column2 ||
+                    leter1 + 1 == leter2 && column1 + 2 == column2 )
+                {
+                    place[leter1, column1] = "0"; place[leter2, column2] = a;    
+                }
+                else
+                {
+                    Console.WriteLine("Knight cant do that");
+                }
+            } 
+            if (place[leter1, column1] == "4")
+            {
+                if (leter1 - 1 == leter2 && column1 - 1 == column2 || leter1 + 1 == leter2 && column1 - 1 == column2 || 
+                    leter1 - 2 == leter2 && column1 - 2 == column2 || leter1 + 2 == leter2 && column1 - 2 == column2 || 
+                    leter1 - 3 == leter2 && column1 - 3 == column2 || leter1 + 3 == leter2 && column1 - 3 == column2 || 
+                    leter1 - 4 == leter2 && column1 - 4 == column2 || leter1 + 4 == leter2 && column1 - 4 == column2 || 
+                    leter1 - 5 == leter2 && column1 - 5 == column2 || leter1 + 5 == leter2 && column1 - 5 == column2 || 
+                    leter1 - 6 == leter2 && column1 - 6 == column2 || leter1 + 6 == leter2 && column1 - 6 == column2 || 
+                    leter1 - 7 == leter2 && column1 - 7 == column2 || leter1 + 7 == leter2 && column1 - 7 == column2 || 
+                    leter1 - 1 == leter2 && column1 + 1 == column2 || leter1 + 1 == leter2 && column1 + 1 == column2 ||
+                    leter1 - 2 == leter2 && column1 + 2 == column2 || leter1 + 2 == leter2 && column1 + 2 == column2 ||
+                    leter1 - 3 == leter2 && column1 + 3 == column2 || leter1 + 3 == leter2 && column1 + 3 == column2 ||
+                    leter1 - 4 == leter2 && column1 + 4 == column2 || leter1 + 4 == leter2 && column1 + 4 == column2 ||
+                    leter1 - 5 == leter2 && column1 + 5 == column2 || leter1 + 5 == leter2 && column1 + 5 == column2 ||
+                    leter1 - 6 == leter2 && column1 + 6 == column2 || leter1 + 6 == leter2 && column1 + 6 == column2 ||
+                    leter1 - 7 == leter2 && column1 + 7 == column2 || leter1 + 7 == leter2 && column1 + 7 == column2 )
 
+                {
+                    place[leter1, column1] = "0"; place[leter2, column2] = a;
+                }
+                else
+                {
+                    Console.WriteLine("Bishop cant do that");
+                }
+            }
+            if (place[leter1, column1] == "5")
+            {
+                if (column1 - 1 == column2 && leter1 == leter2   || column1 + 1 == column2 && leter1 == leter2   ||   
+                    column1 - 2 == column2 && leter1 == leter2   || column1 + 2 == column2 && leter1 == leter2   ||   
+                    column1 - 3 == column2 && leter1 == leter2   || column1 + 3 == column2 && leter1 == leter2   ||   
+                    column1 - 4 == column2 && leter1 == leter2   || column1 + 4 == column2 && leter1 == leter2   ||   
+                    column1 - 5 == column2 && leter1 == leter2   || column1 + 5 == column2 && leter1 == leter2   ||   
+                    column1 - 6 == column2 && leter1 == leter2   || column1 + 6 == column2 && leter1 == leter2   ||   
+                    column1 - 7 == column2 && leter1 == leter2   || column1 + 7 == column2 && leter1 == leter2   || 
+                    leter1  - 1 == leter2  && column1 == column2 || leter1  - 1 == leter2  && column1 == column2 ||
+                    leter1  - 2 == leter2  && column1 == column2 || leter1  - 2 == leter2  && column1 == column2 ||
+                    leter1  - 3 == leter2  && column1 == column2 || leter1  - 3 == leter2  && column1 == column2 ||
+                    leter1  - 4 == leter2  && column1 == column2 || leter1  - 4 == leter2  && column1 == column2 ||
+                    leter1  - 5 == leter2  && column1 == column2 || leter1  - 5 == leter2  && column1 == column2 ||
+                    leter1  - 6 == leter2  && column1 == column2 || leter1  - 6 == leter2  && column1 == column2 ||
+                    leter1  - 7 == leter2  && column1 == column2 || leter1  - 7 == leter2  && column1 == column2 ||
+                    leter1 - 1 == leter2 && column1 - 1 == column2 || leter1 + 1 == leter2 && column1 - 1 == column2 || 
+                    leter1 - 2 == leter2 && column1 - 2 == column2 || leter1 + 2 == leter2 && column1 - 2 == column2 || 
+                    leter1 - 3 == leter2 && column1 - 3 == column2 || leter1 + 3 == leter2 && column1 - 3 == column2 || 
+                    leter1 - 4 == leter2 && column1 - 4 == column2 || leter1 + 4 == leter2 && column1 - 4 == column2 || 
+                    leter1 - 5 == leter2 && column1 - 5 == column2 || leter1 + 5 == leter2 && column1 - 5 == column2 || 
+                    leter1 - 6 == leter2 && column1 - 6 == column2 || leter1 + 6 == leter2 && column1 - 6 == column2 || 
+                    leter1 - 7 == leter2 && column1 - 7 == column2 || leter1 + 7 == leter2 && column1 - 7 == column2 || 
+                    leter1 - 1 == leter2 && column1 + 1 == column2 || leter1 + 1 == leter2 && column1 + 1 == column2 ||
+                    leter1 - 2 == leter2 && column1 + 2 == column2 || leter1 + 2 == leter2 && column1 + 2 == column2 ||
+                    leter1 - 3 == leter2 && column1 + 3 == column2 || leter1 + 3 == leter2 && column1 + 3 == column2 ||
+                    leter1 - 4 == leter2 && column1 + 4 == column2 || leter1 + 4 == leter2 && column1 + 4 == column2 ||
+                    leter1 - 5 == leter2 && column1 + 5 == column2 || leter1 + 5 == leter2 && column1 + 5 == column2 ||
+                    leter1 - 6 == leter2 && column1 + 6 == column2 || leter1 + 6 == leter2 && column1 + 6 == column2 ||
+                    leter1 - 7 == leter2 && column1 + 7 == column2 || leter1 + 7 == leter2 && column1 + 7 == column2 )
+                {
+                    place[leter1, column1] = "0"; place[leter2, column2] = a;     
+                }
+                else 
+                {
+                    Console.WriteLine("Quin cant do that");
+                }
+            }
+            if (place[leter1, column1] == "6")
+            {
+                if (leter1 == leter2 && column1 - 1 == column2 ||
+                    leter1 - 1 == leter2 && column1 - 1 == column2 ||
+                    leter1 - 1 == leter2 && column1 == column2 ||
+                    leter1 - 1 == leter2 && column1 + 1 == column2 ||
+                    leter1 == leter2 && column1 + 1 == column2 ||
+                    leter1 + 1 == leter2 && column1 + 1 == column2 ||
+                    leter1 + 1 == leter2 && column1 == column2 ||
+                    leter1 + 1 == leter2 && column1 - 1 == column2 )
+                {
+                    place[leter1, column1] = "0"; place[leter2, column2] = a;
+                }
+                else 
+                {
+                    Console.WriteLine("King cant do that");
+                }
+            }
         }
         static void CreatePlaces()
         {
