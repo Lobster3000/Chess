@@ -8,41 +8,34 @@ namespace Chess
 {
     class Place
     {
-        private Figure figure;
+        bool m_IsWhite = false;
 
-        //private column, row;
-        //private top, bottom, left, right; 
-
-        public static int SizeLines = 5;
-
-        public bool IsEmpty()
+        Figure m_Figure;
+        public Place(bool isWhite)
         {
-            return figure == null;
+            m_IsWhite = isWhite;
+            m_Figure = null;
         }
 
-        public void Draw(int line)
+        public Figure Figure
         {
-            switch (line)
+            get { return m_Figure; }
+            set { m_Figure = value; }
+        }
+
+        public override string ToString()
+        {
+            if (m_IsWhite) {
+                Console.BackgroundColor = ConsoleColor.White;
+            } else {
+                Console.BackgroundColor = ConsoleColor.Black;
+            }
+
+            if (m_Figure != null)
             {
-                case 1:
-                case 5:
-                    Console.Write("------");
-                    break;
-                case 2:
-                case 3:
-                case 4:
-                    Console.Write("|    |");
-                    break;
-                //case 3:
-                //    if (this.IsEmpty())
-                //    {
-                //        Console.Write("# ");
-                //        figure.Draw();
-                //        Console.Write(" #");
-                //    } else {
-                //        Console.Write("#    #");
-                //    }
-                //    break;
+                return m_Figure.ToString();
+            } else {
+                return " ";
             }
         }
     }

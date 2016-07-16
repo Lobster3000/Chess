@@ -8,18 +8,22 @@ namespace Chess
 {
     class Figure
     {
-        public void Move()
+        public string symbol;
+        public bool side;
+        protected bool blue = true;
+        protected bool red = false;
+
+        public override string ToString()
         {
-
+            if (side == blue)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            } 
+            if (side == red)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            return symbol;
         }
-        public void Draw()
-        {
-
-        }
-    }
-
-    class Rook : Figure
-    {
-
     }
 }
